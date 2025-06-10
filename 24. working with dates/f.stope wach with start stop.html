@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stopwatch</title>
+    <style>
+        #display {
+            font-size: 48px;
+            font-family: monospace;
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="display">00:00:00.000</div>
+    <button id="startBtn">Start</button>
+    <button id="pauseBtn" disabled>Pause</button>
+    <button id="resetBtn" disabled>Reset</button>
+
+    <script>
+    let startTime, elapsedTime = 0;
+    let timerInterval;
+
+    function timeToString(time) {
+        let diffInHrs = time / 3600000;
+        let hh = Math.floor(diffInHrs);
+
+        let diffInMin = (diffInHrs - hh) * 60;
+        let mm = Math.floor(diffInMin);
+
+        let diffInSec = (diffInMin - mm) * 60;
+        let ss = Math.floor(diffInSec);
+
+        let diffInMs = (diffInSec - ss) * 1000;
+        let ms = Math.floor(diffInMs);
+
+        return `${hh.toString().padStart(2,'0')}:${mm.toString().padStart(2,'0')}:${ss.toString().padStart(2,'0')}.${ms.toString().padStart(3,'0')}`;
+    }
+
+    function start() {
+        startTime = Date.now() - elapsedTime;
+        timerInterval = setInterval(function printTime() {
+            elapsedTime = Date.now() - startTime;
+            document.getElementById('display').innerText = timeToString(elapsedTime);
+        }, 10);
+
+        document.getElementById('startBtn').disabled = true;
+        document.getElementById('pauseBtn').disabled = false;
+        document.getElementById('resetBtn').disabled = false;
+    }
+
+    function pause() {
+        clearInterval(timerInterval);
+        document.getElementById('startBtn').disabled = false;
+        document.getElementById('pauseBtn').disabled = true;
+    }
+
+    function reset() {
+        clearInterval(timerInterval);
+        elapsedTime = 0;
+        document.getElementById('display').innerText = "00:00:00.000";
+        document.getElementById('startBtn').disabled = false;
+        document.getElementById('pauseBtn').disabled = true;
+        document.getElementById('resetBtn').disabled = true;
+    }
+
+    document.getElementById('startBtn').addEventListener('click', start);
+    document.getElementById('pauseBtn').addEventListener('click', pause);
+    document.getElementById('resetBtn').addEventListener('click', reset);
+    </script>
+</body>
+</html>

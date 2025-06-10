@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blinking Digital Clock</title>
+    <style>
+        #clock {
+            font-size: 48px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock"></div>
+
+    <script>
+        function updateClock() {
+            let now = new Date();
+            let h = now.getHours().toString().padStart(2, '0');
+            let m = now.getMinutes().toString().padStart(2, '0');
+            let s = now.getSeconds().toString().padStart(2, '0');
+
+            let colon = (now.getSeconds() % 2 === 0) ? ":" : " ";
+            let timeStr = `${h}${colon}${m}${colon}${s}`;
+            document.getElementById('clock').textContent = timeStr;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>

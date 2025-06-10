@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock</title>
+    <style>
+        #clock {
+            font-size: 48px;
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 3px;
+        }
+        .blink {
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+        .blink.off {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="clock"></div>
+<div id="date"></div>
+
+<script>
+function updateClock() {
+    const now = new Date();
+    let hours = now.getHours().toString().padStart(2, '0');
+    let minutes = now.getMinutes().toString().padStart(2, '0');
+    let seconds = now.getSeconds().toString().padStart(2, '0');
+
+    // Blink colon every second
+    let colon = (now.getSeconds() % 2 === 0) ? ":" : " ";
+    let timeStr = `${hours}${colon}${minutes}${colon}${seconds}`;
+
+    document.getElementById('clock').innerText = timeStr;
+
+    // Display date
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('date').innerText = now.toLocaleDateString(undefined, options);
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>

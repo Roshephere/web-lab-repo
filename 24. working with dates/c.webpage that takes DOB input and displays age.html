@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+</head>
+<body>
+    <h2>Enter your Date of Birth:</h2>
+    <input type="date" id="dob">
+    <button onclick="calculateAge()">Calculate Age</button> 
+
+    <p id="ageYears"></p>
+    <p id="ageFull"></p>
+
+    <script>
+        function calculateAge(){
+            let dobInput = document.getElementById('dob').value;
+            if(!dobInput){
+                alert("please Enter a date of birth:");
+                return;
+            }
+            let dob = new Date(dobInput);
+
+            let now = new Date();
+
+            //calculate years diff
+            let years = now.getFullYear()- dob.getFullYear();
+            
+            //Adjust if birthday not occurred yet this year
+            let month = now.getMonth()- dob.getMonth();
+            let day = now.getDate() - dob.getDate();
+            
+            if(month <0 || (month == 0 && day <0)){
+                years--;
+            }
+            document.getElementById("ageYears").innerText = `Age in Years: ${years}`;
+
+
+             let totalMonths = (now.getFullYear() - dob.getFullYear()) * 12 + (now.getMonth() - dob.getMonth());
+            let days;
+            if (now.getDate() >= dob.getDate()) {
+                days = now.getDate() - dob.getDate();
+            } else {
+                totalMonths--;
+                let prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                days = prevMonth.getDate() - dob.getDate() + now.getDate();
+            }
+
+            let fullYears = Math.floor(totalMonths / 12);
+            let months = totalMonths % 12;
+
+            document.getElementById("ageFull").innerText = `Age: ${fullYears} years, ${months} months, and ${days} days`;
+        }
+            
+    </script>
+    
+</body>
+</html>
