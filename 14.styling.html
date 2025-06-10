@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text and Fonts in CSS</title>
+    <style>
+    body {
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Fonts */
+    .arial-text {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+    }
+
+    .times-text {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
+    }
+
+    /* Text transformation */
+    .uppercase-text {
+      text-transform: uppercase;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    /* Paragraph formatting */
+    .formatted-paragraph {
+      text-align: justify;
+      line-height: 1.8;
+      letter-spacing: 1px;
+      text-decoration: underline overline;
+      font-size: 16px;
+    }
+
+    /* Heading with shadow */
+    h1.shadow-heading {
+      font-size: 36px;
+      text-align: center;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body>
+      <h1 class="shadow-heading">Text & Font Styling</h1>
+
+    <p class="arial-text"> This is the Arial font</p>
+    <p class="times-text">This is the Times New Roman text.</p>
+
+    <p class="uppercase-text">This is the upper case text.</p>
+
+      <p class="formatted-paragraph">
+    This paragraph demonstrates advanced formatting: justified text, increased line height, extra spacing between letters, and both underline and overline decoration.
+  </p>
+
+
+    
+</body>
+</html>

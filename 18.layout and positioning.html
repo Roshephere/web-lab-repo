@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Layout and Positioning</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    /* 1. Relative Positioning */
+    .relative-example {
+      width: 200px;
+      height: 100px;
+      background-color: lightblue;
+      position: relative;
+      top: 20px;
+      left: 30px;
+      margin-bottom: 40px;
+    }
+
+    /* 2. Float layout */
+    .float-container {
+      overflow: auto;
+      margin-bottom: 40px;
+    }
+
+    .float-box {
+      width: 30%;
+      height: 100px;
+      float: left;
+      margin-right: 2%;
+      background-color: lightgreen;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    .float-box:last-child {
+      margin-right: 0;
+    }
+
+    /* 3. Relative parent + absolute child */
+    .parent {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background-color: lightcoral;
+      margin-bottom: 40px;
+    }
+
+    .child {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 100px;
+      height: 50px;
+      background-color: white;
+      border: 2px dashed red;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    /* 4. Display properties */
+    .display-container {
+      margin-bottom: 40px;
+    }
+
+    .inline-box {
+      display: inline;
+      background-color: yellow;
+      padding: 5px;
+    }
+
+    .block-box {
+      display: block;
+      background-color: skyblue;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .inline-block-box {
+      display: inline-block;
+      background-color: violet;
+      padding: 10px;
+      width: 150px;
+      height: 50px;
+      margin-top: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h2>1. Relative Positioning</h2>
+  <div class="relative-example">Moved using relative position</div>
+
+  <h2>2. Float Layout</h2>
+  <div class="float-container">
+    <div class="float-box">Box 1</div>
+    <div class="float-box">Box 2</div>
+    <div class="float-box">Box 3</div>
+  </div>
+
+  <h2>3. Absolute Child in Relative Parent</h2>
+  <div class="parent">
+    Parent Div
+    <div class="child">Child (absolute)</div>
+  </div>
+
+  <h2>4. Display Property Examples</h2>
+  <div class="display-container">
+    <span class="inline-box">Inline Box</span>
+    <span class="block-box">Block Box</span>
+    <span class="inline-block-box">Inline-Block Box</span>
+  </div>
+
+  <h3>Explanation:</h3>
+  <ul>
+    <li><strong>Inline:</strong> Does not allow setting width/height, flows with text.</li>
+    <li><strong>Block:</strong> Starts on a new line, takes full width by default.</li>
+    <li><strong>Inline-block:</strong> Respects width/height like block but flows like inline.</li>
+  </ul>
+  
+
+</body>
+</html>

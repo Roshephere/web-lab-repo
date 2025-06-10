@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with HTML table</title>
+</head>
+<body>
+    <h2>Student Grade Report</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Subject</th>
+      <th>Marks</th>
+      <th>Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ram</td>
+      <td>Math</td>
+      <td>85</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <td>Hari</td>
+      <td>Science</td>
+      <td>74</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <td>Sita</td>
+      <td>English</td>
+      <td>91</td>
+      <td>A+</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Product Inventory Table</h2>
+<table border="1">
+  <caption>Product Inventory Summary</caption>
+
+  <colgroup>
+    <col span="1" style="background-color:#f2f2f2;">
+    <col span="1" style="background-color:#d9f2d9;">
+    <col span="1" style="background-color:#f2d9d9;">
+    <col span="1" style="background-color:#f2f2f2;">
+  </colgroup>
+
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Category</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td rowspan="2">Laptop</td>
+      <td>Electronics</td>
+      <td>15</td>
+      <td>$800</td>
+    </tr>
+    <tr>
+      <td colspan="3" style="text-align: center;">On Sale!</td>
+    </tr>
+    <tr>
+      <td>Chair</td>
+      <td>Furniture</td>
+      <td>30</td>
+      <td>$45</td>
+    </tr>
+    <tr>
+      <td>Notebook</td>
+      <td>Stationery</td>
+      <td>100</td>
+      <td>$10</td>
+    </tr>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <td colspan="4" style="text-align:center;">Inventory Last Updated: June 2025</td>
+    </tr>
+  </tfoot>
+</table>
+
+</body>
+</html>

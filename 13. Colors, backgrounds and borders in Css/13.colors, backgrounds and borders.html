@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors , Background and Borders in CSS</title>
+    <style>
+        .hex-color { color: #FF5733; }
+        .rgb-color { color: rgb(60, 179, 113); }
+        .named-color { color: teal; }
+        .bg-image {
+            background-color: #cccccc;
+            background-image: url('https://www.w3schools.com/css/img_lights.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 150px;
+            border: 2px solid #333;
+            margin-bottom: 20px;
+        }
+        .border-dotted { border: 3px dotted #555; padding: 10px; margin-bottom: 10px; }
+        .border-dashed { border: 3px dashed #555; padding: 10px; margin-bottom: 10px; }
+        .border-solid { border: 3px solid #555; padding: 10px; margin-bottom: 10px; }
+        .border-double { border: 4px double #555; padding: 10px; margin-bottom: 10px; }
+        .border-groove { border: 4px groove #555; padding: 10px; margin-bottom: 10px; }
+        .border-ridge { border: 4px ridge #555; padding: 10px; margin-bottom: 10px; }
+        .border-inset { border: 4px inset #555; padding: 10px; margin-bottom: 10px; }
+        .border-outset { border: 4px outset #555; padding: 10px; margin-bottom: 10px; }
+        .border-none { border: none; padding: 10px; margin-bottom: 10px; background: #eee; }
+        .border-hidden { border: hidden; padding: 10px; margin-bottom: 10px; background: #eee; }
+        .rounded-shadow {
+            border: 3px solid #4CAF50;
+            border-radius: 20px;
+            box-shadow: 4px 4px 15px rgba(0,0,0,0.3);
+            padding: 20px;
+            margin-top: 20px;
+            background: #f9fff9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Colors, Backgrounds, and Borders in CSS</h1>
+
+    <p class="hex-color">This paragraph uses a hex color code (#FF5733).</p>
+    <p class="rgb-color">This paragraph uses an RGB color (rgb(60, 179, 113)).</p>
+    <p class="named-color">This paragraph uses a predefined color name (teal).</p>
+
+    <div class="bg-image"></div>
+
+    <div class="border-dotted">Dotted border</div>
+    <div class="border-dashed">Dashed border</div>
+    <div class="border-solid">Solid border</div>
+    <div class="border-double">Double border</div>
+    <div class="border-groove">Groove border</div>
+    <div class="border-ridge">Ridge border</div>
+    <div class="border-inset">Inset border</div>
+    <div class="border-outset">Outset border</div>
+    <div class="border-none">No border (none)</div>
+    <div class="border-hidden">No border (hidden)</div>
+
+    <div class="rounded-shadow">
+        <h2>Rounded Corners and Shadow</h2>
+        <p>This div has rounded corners and a box shadow.</p>
+    </div>
+</body>
+</html>

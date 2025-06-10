@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Selectors Example</title>
+  <style>
+    /* 1. Element Selector */
+h1 {
+  color: darkblue;
+}
+
+/* 2. Universal Selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 3. Grouping Selector */
+h2, h3 {
+  color: green;
+  margin: 10px 0;
+}
+
+/* 4. Pseudo-class Selectors */
+a:hover {
+  color: red;
+}
+
+input:focus {
+  border: 2px solid blue;
+}
+
+input:checked {
+  outline: 2px solid orange;
+}
+
+input:disabled {
+  background-color: #ddd;
+}
+
+input:required {
+  border: 2px dashed purple;
+}
+
+/* 5. Pseudo-element Selectors */
+p::first-letter {
+  font-size: 200%;
+  color: crimson;
+}
+
+p::first-line {
+  font-style: italic;
+}
+
+.box::before {
+  content: "Before: ";
+  color: teal;
+}
+
+.box::after {
+  content: " [After]";
+  color: maroon;
+}
+
+.highlight::selection {
+  background-color: yellow;
+  color: black;
+}
+
+/* 6. Attribute Selectors */
+a[target="_blank"] {
+  color: darkred;
+}
+
+a[title] {
+  text-decoration: underline dotted;
+}
+
+a[data-info] {
+  font-weight: bold;
+}
+
+input[type="email"] {
+  background-color: #eef;
+}
+
+input[placeholder] {
+  border: 1px solid gray;
+}
+
+  </style>
+</head>
+<body>
+
+  <h1>Main Heading</h1>
+  <h2 class="group-title">Subheading 1</h2>
+  <h3 class="group-title">Subheading 2</h3>
+
+  <p>This is a paragraph.</p>
+
+  <a href="#" class="hover-link">Hover over me</a>
+  <br><br>
+  <input type="text" placeholder="Focus here">
+  <input type="checkbox" checked>
+  <br>
+  <br>
+  <div>Gender
+        <label for="male">Male</label>
+      <input type="radio" name="gender" id="male" checked>
+      <label for="female">Female</label>
+      <input type="radio" name="gender" id="female">
+      <br><br>
+      
+    </div>
+    <input type="submit" value="Submit">
+
+  <div class="box">This is a box.</div>
+
+  <p class="highlight">This paragraph uses a pseudo-element.</p>
+
+  <a href="#" target="_blank">External Link</a>
+  <a href="#" title="tooltip">Hover me (title)</a>
+  <a href="#" data-info="custom">Data Info</a>
+    <br><br>
+  <label for="email">Email:</label>
+  <input type="email" placeholder="Email" id="email" required>
+  
+  <input type="text" placeholder="This is the disabled input" disabled>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Responsive Website</title>
+  <style>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+header {
+  background-color: #0077b6;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-top: 10px;
+}
+
+nav ul li {
+  margin: 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+}
+
+article {
+  flex: 2;
+}
+
+aside {
+  flex: 1;
+  background: #e3f2fd;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #023e8a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  aside {
+    order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+}
+</style>
+</head>
+<body>
+  <header>
+    <h1>Roshab's Blog</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Articles</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Welcome</h2>
+      <p>This is a clean, responsive site built using HTML and CSS. Resize the screen to see it adapt!</p>
+    </section>
+
+    <section class="content">
+      <article>
+        <h3>Latest Article</h3>
+        <p>This is a sample blog article showing how layout adjusts based on screen width.</p>
+      </article>
+
+      <aside>
+        <h3>About Me</h3>
+        <p>Student of CSIT. Learning frontend web design and development.</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Roshephere. All rights reserved.</p>
+  </footer>
+</body>
+</html>

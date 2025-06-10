@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Basic Syntax</title>
+</head>
+<body>
+  <h1>Open the console and interact with prompts</h1>
+  <script>
+    // a)
+    // array1 with 10 natural numbers
+    let array1 = [1,2,3,4,5,6,7,8,9,10];
+
+    // array2 from user input
+    let array2 = [];
+    for (let i = 0; i < 5; i++) {
+      array2.push(parseFloat(prompt(`Enter floating point number ${i+1}:`)));
+    }
+
+    // array3 empty
+    let array3 = [];
+
+    // Sum and check divisibility by 7
+    let sum1 = array1.reduce((a,b) => a + b, 0);
+    alert(`Sum of array1 is ${sum1}. Divisible by 7? ${sum1 % 7 === 0}`);
+
+    // Array2 add two elements
+    console.log("Before adding two elements:", array2);
+    array2.push(99.9, 100.1);
+    console.log("After adding two elements:", array2);
+    array2.shift();
+    console.log("After removing first element:", array2);
+
+    // Sum of digits using while loop
+    let num = parseInt(prompt("Enter a number to sum its digits:"));
+    let digitSum = 0, n = num;
+    while (n > 0) {
+      digitSum += n % 10;
+      n = Math.floor(n / 10);
+    }
+    alert(`Sum of digits of ${num} is ${digitSum}`);
+
+    // do-while prompt with confirm
+    let sumAll = 0, input;
+    do {
+      input = parseFloat(prompt("Enter a number:"));
+      sumAll += input;
+    } while (confirm("Do you want to enter another number?"));
+    alert(`Total sum of all entered numbers is ${sumAll}`);
+
+    // 10 array3 methods
+    array3.push(10);
+    array3.push(20);
+    array3.unshift(5);
+    array3.pop();
+    array3.splice(1, 0, 15);
+    array3[3] = 25;
+    let found = array3.includes(15);
+    let idx = array3.indexOf(15);
+    let mapped = array3.map(x => x * 2);
+    let sliced = array3.slice(0, 2);
+    console.log("array3 operations: ", array3, found, idx, mapped, sliced);
+
+    // forEach
+    array2.forEach((val, idx) => console.log(`array2[${idx}] = ${val}`));
+
+    // for-of and for-in
+    for (let val of array1) console.log("for-of:", val);
+    for (let index in array1) console.log("for-in:", index, array1[index]);
+
+    // b) Function definitions
+    function greet(name) {
+      alert("Hello, " + name);
+    }
+    //method2:
+    const square = function(x) {
+      return x * x;
+    }
+    //method3:
+    const cube = x => x * x * x;
+
+    greet("Roshab Shahi");
+    console.log("Square of 4:", square(4));
+    console.log("Cube of 3:", cube(3));
+
+    // c) Objects
+    // 1. Object literal
+    let student = {
+      name: "Shahi Roshab",
+      age: 50,
+      greet() { return `Hi, I'm ${this.name}`; }
+    };
+    console.log(student.greet());
+    student.age = 22;
+    delete student.name;
+    console.log(student);
+
+    // 2. Using constructor
+    function Car(make, model) {
+      this.make = make;
+      this.model = model;
+      this.info = function() {
+        return `${this.make} ${this.model}`;
+      }
+    }
+    let myCar = new Car("Toyota", "Yaris");
+    console.log(myCar.info());
+
+    // 3. Object.create
+    let proto = {
+      speak() { return "Hello from proto"; }
+    };
+    let obj = Object.create(proto);
+    obj.name = "ProtoObj";
+    console.log(obj.name, obj.speak());
+
+    // d) If-Else-If
+    let numInput = prompt("Enter a number:");
+    if (numInput.length === 1) alert("Single digit number");
+    else if (numInput.length === 2) alert("Double digit number");
+    else if (numInput.length === 3) alert("Triple digit number");
+    else alert("Multi digit number");
+
+    // e) Switch Case Calculator
+    let n1 = parseFloat(prompt("Enter first number:"));
+    let n2 = parseFloat(prompt("Enter second number:"));
+    let op = prompt("Enter operator (+, -, *, /, %):");
+    let result;
+    switch(op) {
+      case '+': result = n1 + n2; break;
+      case '-': result = n1 - n2; break;
+      case '*': result = n1 * n2; break;
+      case '/': result = n1 / n2; break;
+      case '%': result = n1 % n2; break;
+      default: result = "Invalid operator";
+    }
+    alert(`Result: ${result}`);
+
+    // f) Try, Catch, Throw, Finally
+    try {
+      let age = prompt("Enter your age:");
+      if (isNaN(age)) throw "Not a number!";
+      if (age < 0) throw "Negative age not allowed!";
+      alert("Your age is valid.");
+    } catch (error) {
+      alert("Error: " + error);
+    } finally {
+      console.log("Validation complete.");
+    }
+  </script>
+</body>
+</html>

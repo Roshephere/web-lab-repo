@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List and Table Styling</title>
+  <style>
+    /* Custom bullet image */
+    ul.custom-bullets {
+      list-style-image: url('https://cdn-icons-png.flaticon.com/16/1828/1828817.png');
+      margin-bottom: 20px;
+    }
+
+    /* Square bullets */
+    ul.square-bullets {
+      list-style-type: square;
+      margin-bottom: 20px;
+    }
+
+    /* Roman numeral list */
+    ol.roman {
+      list-style-type: upper-roman;
+      margin-bottom: 20px;
+    }
+
+    /* Lowercase letter list */
+    ol.lower-alpha {
+      list-style-type: lower-alpha;
+      margin-bottom: 20px;
+    }
+
+    /* Table styling */
+    table {
+      width: 60%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+
+    th, td {
+      border: 1px solid #333;
+      padding: 10px;
+      text-align: left;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Unordered List with Custom Bullet Image</h2>
+  <ul class="custom-bullets">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+
+  <h2>Unordered List with Square Bullets</h2>
+  <ul class="square-bullets">
+    <li>PHP</li>
+    <li>Python</li>
+    <li>Java</li>
+  </ul>
+
+  <h2>Ordered List with Roman Numerals</h2>
+  <ol class="roman">
+    <li>Introduction</li>
+    <li>Body</li>
+    <li>Conclusion</li>
+  </ol>
+
+  <h2>Ordered List with Lowercase Letters</h2>
+  <ol class="lower-alpha">
+    <li>Item A</li>
+    <li>Item B</li>
+    <li>Item C</li>
+  </ol>
+
+  <h2>Styled Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Marks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mathematics</td>
+        <td>95</td>
+      </tr>
+      <tr>
+        <td>Science</td>
+        <td>89</td>
+      </tr>
+      <tr>
+        <td>English</td>
+        <td>92</td>
+      </tr>
+      <tr>
+        <td>Computer</td>
+        <td>98</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

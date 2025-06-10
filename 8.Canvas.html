@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas and SVG Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    canvas {
+      border: 2px solid #333;
+      margin-bottom: 30px;
+    }
+    svg {
+      border: 2px solid #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Graphics with Canvas and SVG</h1>
+
+  <!-- Canvas Section -->
+  <section>
+    <h2>Canvas Drawing</h2>
+    <canvas id="myCanvas" width="300" height="200"></canvas>
+  </section>
+
+  <!-- SVG Section -->
+  <section>
+    <h2>SVG Shapes</h2>
+    <svg width="300" height="200">
+      <!-- Rectangle -->
+      <rect x="10" y="10" width="80" height="60" fill="skyblue" stroke="black" stroke-width="2" />
+      
+      <!-- Circle -->
+      <circle cx="150" cy="40" r="30" fill="lightgreen" stroke="black" stroke-width="2" />
+      
+      <!-- Line -->
+      <line x1="200" y1="10" x2="280" y2="70" stroke="red" stroke-width="3" />
+      
+      <!-- Text -->
+      <text x="50" y="120" font-size="16" fill="darkblue">SVG Example</text>
+    </svg>
+  </section>
+
+  <script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Draw a red rectangle
+    ctx.fillStyle = "red";
+    ctx.fillRect(20, 20, 100, 50);
+
+    // Draw a blue circle
+    ctx.beginPath();
+    ctx.arc(180, 60, 30, 0, Math.PI * 2);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+
+    // Draw text
+    ctx.fillStyle = "black";
+    ctx.font = "16px Arial";
+    ctx.fillText("Canvas Example", 80, 150);
+  </script>
+
+</body>
+</html>

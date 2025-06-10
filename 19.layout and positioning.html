@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS3 Borders, Shadows, and Text Effects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+    h1, h2 {
+      color: #444;
+      margin-top: 30px;
+    }
+
+    /* ──────────────────────── */
+    /* 1. Borders and Rounded Corners */
+    /* ──────────────────────── */
+
+    /* Rounded corners */
+    .rounded {
+      border: 2px solid #333;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #fff;
+    }
+
+    /* Gradient border using border-image */
+    .gradient-border {
+      border: 5px solid;
+      border-image: linear-gradient(45deg, red, blue) 1;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #fff;
+    }
+
+    /* Border image: Using a placeholder image URL */
+    .border-image {
+      border: 15px solid transparent;
+      border-image: url('https://via.placeholder.com/150') 30 round;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #fff;
+    }
+
+    /* ──────────────────────── */
+    /* 2. Box Shadows */
+    /* ──────────────────────── */
+
+    .box-shadow-1 {
+      background-color: #e0f7fa;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .box-shadow-2 {
+      background-color: #ffecb3;
+      padding: 20px;
+      margin-bottom: 20px;
+      /* Offset: 5px, 5px; Blur: 10px; Spread: 2px; Color: semi-transparent red */
+      box-shadow: 5px 5px 10px 2px rgba(255, 0, 0, 0.7);
+    }
+
+    /* ──────────────────────── */
+    /* 3. Text Effects */
+    /* ──────────────────────── */
+
+    /* Text shadow effect */
+    .text-shadow {
+      font-size: 24px;
+      color: #333;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+    }
+
+    /* Text overflow with ellipsis */
+    .text-overflow {
+      width: 250px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+      background-color: #fff;
+    }
+
+    /* Word wrapping */
+    .word-wrap {
+      width: 250px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      word-wrap: break-word;
+      background-color: #fff;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS3 Borders, Shadows, and Text Effects</h1>
+
+  <h2>1. Borders and Rounded Corners</h2>
+  <div class="rounded">
+    This div has rounded corners.
+  </div>
+  <div class="gradient-border">
+    This div has a gradient border using <code>border-image</code>.
+  </div>
+  <div class="border-image">
+    This div uses a border image (using a placeholder image URL).
+  </div>
+
+  <h2>2. Box Shadows</h2>
+  <div class="box-shadow-1">
+    This div has a subtle box shadow.
+  </div>
+  <div class="box-shadow-2">
+    This div has a pronounced box shadow with more blur, spread, and a red color.
+  </div>
+
+  <h2>3. Text Effects</h2>
+  <div class="text-shadow">
+    This text has a shadow effect.
+  </div>
+  <div class="text-overflow">
+    This long text will be truncated with an ellipsis if it overflows the container.
+  </div>
+  <div class="word-wrap">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tristique, nisi a molestie pretium, neque lorem laoreet ante, a semper arcu urna quis purus.
+  </div>
+</body>
+</html>
