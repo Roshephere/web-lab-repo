@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add, sub or multiply output with alerts</title>
+</head>
+<body>
+    <input type="number" id="num1" placeholder="number 1">
+    <input type="number" id="num2" placeholder="number 2"> <br> <br>
+
+    <button onclick="calculate('add')">ADD</button>
+    <button onclick="calculate('sub')">SUBSTRACT</button>
+    <button onclick="calculate('mul')">MULTIPLY</button>
+
+    <script>
+
+        function calculate(operation){
+            let n1 = parseFloat(document.getElementById('num1').value);
+            let n2 = parseFloat(document.getElementById('num2').value);
+            if(isNaN(n1) || isNaN(n2)){
+                alert("Please Enter a valid numbers:");
+                return;
+            }
+
+            let result;
+            switch(operation){
+                case 'add' : result = n1+n2; break;
+                case 'sub' : result = n1-n2; break;
+                case 'mul' : result = n1*n2; break;
+            }
+            alert("Result:" + result);
+        }
+    </script>
+</body>
+</html>

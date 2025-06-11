@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ways to register events in JS</title>
+
+</head>
+<body>
+
+    <button id="btn1">click Me- Inline</button>
+    <button id="btn2">click Me- DOM Property</button>
+    <button id="btn3">click Me- addEventListener</button>
+
+    <script>
+        document.getElementById('btn1').setAttribute("onclick","alert('clicked using inline event!!')");
+
+        document.getElementById('btn2').onclick = function(){
+            alert("clicked using DOM Property!");
+        }
+
+        document.getElementById('btn3').addEventListener('click', function(){
+            alert('clicked using addEventListener!!');
+        });
+    </script>
+    
+</body>
+</html>
